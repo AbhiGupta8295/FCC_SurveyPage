@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <style>
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                z-index: -1;
+                background-image: linear-gradient(125deg, rgba(172, 91, 229, 0.7), rgba(230, 228, 126, 0.4)), url("https://www.biospace.com/getasset/ff893178-9ffa-4b80-943e-1d8eb6e3a783/");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+
+            .box {
+                background-color: rgb(0, 0, 0);  /* Fallback color */
+                background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
+                color: white;
+                border-radius: 10px;
+                border: 3px solid #f1f1f1;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+                width: 50%;
+                padding: center;
+                margin: auto;
+                padding-bottom: 5rem;
+            }
+
+            label {
+                display: flex;
+                flex-direction: row;
+                font-size: 1.2rem;
+                margin-bottom: 0.5rem;
+            }
+            #title {
+                text-align: center;
+                font-size: 2.5rem;
+                font-family: Garamond;
+            }
+            #description {
+                text-align: center;
+                margin-top: -10px;
+                font-size: 1.5rem;
+            }
+            #survey-form {
+                padding-left: left;
+            }
+            #name,#email,#number {
+                align-items: center;
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+                margin-left: 3rem;
+                padding: 0.375rem 0.75rem;
+                width: 80%;
+                font-family: "Poppins", sans-serif;
+                border-radius: 5px;
+            }
+            #name-label,#email-label,#number-label {
+                display: flex;
+                align-items: center;
+                font-size: 1.2rem;
+                margin-bottom: 0.5rem;
+                margin-left: 3rem;
+                margin-top: 1.5rem;
+                width: 100%;
+            }
+            #dropdown {
+                font-size: 1rem;
+                margin-left: 3rem;
+                width: 84%;
+                border-radius: 5px;
+                padding: 0.375rem 0.75rem;
+            }
+            #submit {
+                font-size: 1.2rem;
+                width: 84.5%;
+                background-color: rgb(88, 88, 232);
+                margin-left: 3.5rem;
+                margin-top: 1.5rem;
+                padding: 0.375rem 0.75rem;
+                border-radius: 5px;
+                color:white;
+            }
+            #submit:hover {
+                transform: scale(1.1);
+                background-color: #3fbf7f;
+                color:black;
+                cursor: pointer;
+            }
+
+            p {
+                font-size: 1.2rem;
+                margin-top: 1.5rem;
+                margin-bottom: 10px;
+                margin-left: 3rem;
+            }
+
+            .radio {
+                display: inline-block;
+                margin-left: 3rem;
+                font-size: 1.2rem;
+                margin-top: 2px;
+            }
+
+            .radio-input {
+                display: inline-block;
+                font-size: 1rem;
+                flex-direction: column;
+                height: 0.9rem;
+                width: 0.9rem;
+            }
+            .checkbox-input {
+                display: inline-block;
+                margin-left: 3rem;
+                height: 1.2rem;
+                width: 1.2rem;
+                margin-right: 1rem;
+            }
+            .comment-area {
+                font-family: "Poppins", sans-serif;
+                font-size: 1rem;
+                margin-left: 3rem;
+                width: 81%;
+                height: 100%;
+                height: 100px;
+                margin-bottom: 10px;
+                padding: 0.375rem 0.75rem;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1 id="title">Vaccination Survey Form</h1>
+            <p id="description">This survey is to estimate the total population vaccinated</p>
+            <form class="box" id="survey-form">
+                <div>
+                    <label id="name-label" for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder=" Enter name" required />
+                </div>
+                <div>
+                    <label id="email-label" for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder=" abc@example.com" required />
+                </div>
+                <div>
+                    <label id="number-label" for="age">Age:</label>
+                    <input type="number" id="number" name="age" placeholder=" Age" min="1" max="99" required />
+                </div>
+                <div>
+                    <p>Gender:</p>
+                    <label class="radio" for="gender-male">Male</label>
+                    <input type="radio" class="radio-input" name="gender-choice" value="choice-1" />
+                    <label class="radio" for="gender-male">Female</label>
+                    <input type="radio" class="radio-input" name="gender-choice" value="choice-2" />
+                    <label class="radio" for="gender-male">I prefer not to say</label>
+                    <input type="radio" class="radio-input" name="gender-choice" value="choice-3" />
+                </div>
+
+                <div>
+                    <p>Indian State:</p>
+                    <select id="dropdown" name="state" required>
+                        <option disabled selected value>Select State</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                        <option value="Daman and Diu">Daman and Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Puducherry">Puducherry</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="West Bengal">West Bengal</option>
+                    </select>
+                </div>
+                <div>
+                    <label id="number-label" style="margin-top: 2rem;" for="number">Number of dosages:</label>
+                    <input type="number" style="width: 80.5%;" id="number" name="number" placeholder=" Dosage count" min="1" max="2" required />
+                </div>
+
+                <div>
+                    <p>Do you have any of the following:</p>
+                    <label> <input name="prefer" value="Cough" type="checkbox" class="checkbox-input" />Cough</label>
+                    <label> <input name="prefer" value="Cold" type="checkbox" class="checkbox-input" />Cold</label>
+                    <label> <input name="prefer" value="Fever" type="checkbox" class="checkbox-input" />Fever</label>
+                    <label> <input name="prefer" value="Shortness of breath" type="checkbox" class="checkbox-input" />Shortness of breath</label>
+                    <label> <input name="prefer" value="Sore throat" type="checkbox" class="checkbox-input" />Sore throat</label>
+                    <label> <input name="prefer" value="Loss of smell/taste" type="checkbox" class="checkbox-input" />Loss of smell/taste</label>
+                    <label> <input name="prefer" value="Abdominal pain" type="checkbox" class="checkbox-input" />Abdominal pain</label>
+                    <label> <input name="prefer" value="Abnormal bruising or bleeding/eye redness" type="checkbox" class="checkbox-input" />Abnormal bruising or bleeding/eye redness</label>
+                </div>
+                <div>
+                    <p>Any other symptoms:</p>
+                    <textarea name="comment" class="comment-area" placeholder=" Specify here..."></textarea>
+                </div>
+                <button type="submit" id="submit">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </body>
+</html>
